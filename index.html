@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>esteganografía lsb</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <!-- Menú Principal -->
+    <div id="main-menu">
+        <header class="header-container">
+            <img class="header-logo" src="logo.jpeg" alt="Logotipo de la aplicación de esteganografía">
+            <h1 class="header-title">esteganografía</h1>
+            <p class="header-subtitle">Esta aplicación permite ocultar y revelar mensajes dentro de imágenes.</p>
+        </header>
+        <main>
+            <section class="menu-container">
+                <div class="btn-container">
+                    <button class="btn" id="hide" type="button">Ocultar</button>
+                    <button class="btn" id="reveal" type="button">Revelar</button>
+                </div>
+            </section>
+        </main>
+        <footer class="footer-container">
+            © 2024 por&nbsp <a href="https://github.com/jorge-fabiano/steganography-lsb" target="_blank" rel="noopener noreferrer">jorgefabiano</a>
+        </footer>
+    </div>
+
+    <!-- Menú para Ocultar -->
+    <div id="hide-menu">
+        <header class="header-container-hide">
+            <h1>Ocultar mensaje</h1>
+        </header>
+        <main>
+            <section class="menu-container-hide">
+                <form id="hideForm">
+                    <div class="labels-container-hide">
+                        <h2 class="steps-title">Paso 1</h2>
+                        <p>Selecciona una imagen en la que deseas ocultar tu mensaje.</p>
+                        <div class="input-custom">
+                            <label class="custom-file-upload" for="imageHide">Subir imagen</label>
+                            <span id="file-name-hide"></span>
+                            <input type="file" id="imageHide" accept="image/*" required><br><br>
+                        </div>
+                        <h2 class="steps-title">Paso 2</h2>
+                        <label for="message">Escribe el mensaje que deseas ocultar en la imagen seleccionada.</label>
+                        <textarea id="message" placeholder="Escribe aquí tu mensaje a ocultar..." required></textarea><br><br>
+                    </div>
+                    <div class="btn-container-hide">
+                        <button class="btn" id="hide-start" type="submit">Ocultar</button>
+                        <button class="btn btn-exit" type="button">Salir</button>
+                    </div>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <!-- Menú para Ocultar guardar imagen -->
+    <div id="hide-menu-final">
+        <header class="header-container-hide">
+            <h1>¡Listo!</h1>
+            <h2>Tu mensaje ha sido ocultado dentro de la imagen.</h2>
+        </header>
+        <main>
+            <section class="menu-container-hide">
+                <div class="result-menu">
+                    <div class="labels-container-hide">
+                        <p class="text-saveImage">Recuerda guardar la imagen en un lugar seguro, ya que el mensaje oculto solo puede ser descifrado con esta imagen.</p>
+                        <p class="text-saveImage-2">Clic derecho o mantén presionada la imagen para guardar.</p>
+                    </div>
+                    <img id="outputImage" style="max-width: 40%;"><br><br>
+                    <div class="btn-container-hide">
+                        <button class="btn btn-exit" type="button">Salir</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Menú para Revelar cargar imagen -->
+    <div id="reveal-menu">
+        <header class="header-container-reveal">
+            <h1>Revelar mensaje</h1>
+        </header>
+        <main>
+            <section class="menu-container-reveal">
+                <form id="revealForm">
+                    <div class="labels-container-reveal">
+                        <h2 class="steps-title">Paso 1</h2>
+                        <div class="input-custom">
+                            <p>Selecciona la imagen que contiene el mensaje oculto para extraerlo.</p>
+                            <label class="custom-file-upload" for="imageReveal">Subir imagen</label>
+                            <span id="file-name-reveal"></span>
+                            <input type="file" id="imageReveal" accept="image/*" required><br><br><br>
+                        </div>
+                    </div>
+                    <div class="btn-container-reveal">
+                        <button class="btn" id="reveal-start" type="submit">Revelar</button>
+                        <button class="btn btn-exit" type="button">Salir</button>
+                    </div>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <!-- Menú para Revelar mensaje oculto -->
+    <div id="reveal-menu-final">
+        <header class="header-container-reveal">
+            <h1>¡Listo!</h1>
+            <h2>Shh! No le cuentes a nadie. <br><br>El mensaje oculto encontrado es:</h2>
+        </header>
+        <main>
+            <section class="menu-container-reveal">
+                <div class="result-menu">
+                    <div class="labels-container-reveal">
+                        <div class="revealed-message" id="extractedMessage"></div>
+                    </div>
+                    <div class="btn-container-reveal">
+                        <button class="btn btn-exit">Salir</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <canvas id="canvas" style="display: none;"></canvas>
+</body>
+</html>
