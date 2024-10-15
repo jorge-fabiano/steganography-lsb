@@ -1,13 +1,13 @@
-# Esteganografía LSB
+# Steganography-LSB
 
-## Descripción
-Esta es una aplicación web diseñada para demostrar el concepto de esteganografía utilizando el método de LSB (Least Significant Bit). La aplicación permite a los usuarios ocultar mensajes dentro de imágenes y revelarlos posteriormente.
+## Description
+This is a web application designed to demonstrate the concept of steganography using the LSB (Least Significant Bit) method. The application allows users to hide messages within images and reveal them later.
 
-## Características
-- **Ocultar Mensajes:** Permite a los usuarios cargar una imagen y ocultar un mensaje en ella.
-- **Revelar Mensajes:** Los usuarios pueden cargar una imagen que contiene un mensaje oculto y extraerlo.
+## Features
+- **Hide Messages:** Allows users to upload an image and hide a message in it.
+- **Reveal Messages:** Users can upload an image that contains a hidden message and extract it.
 
-## Tecnologías Utilizadas
+## Technologies Used
 - HTML5
 - CSS3
 - JavaScript
